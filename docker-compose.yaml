@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+    db:
+      image: postgres:12.2-alpine
+      restart: always
+      environment:
+        - POSTGRES_PASSWORD=db
+        - POSTGRES_USER=db
+        - POSTGRES_DB=db
+      volumes:
+        - ./db-samples:/db
+
+    dbadmin:
+      image: dpage/pgadmin4
+      restart: always
+      ports:
+        - 8036:80
+      environment:
+        - PGADMIN_DEFAULT_EMAIL=admin
+        - PGADMIN_DEFAULT_PASSWORD=123456
+      depends_on:
+        - db
