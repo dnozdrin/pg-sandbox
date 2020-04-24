@@ -1,3 +1,4 @@
-db-samples/ml-latest.zip
-db-samples/ml-latest.sql
-db-samples/ml-latest/
+data-sources/ml-latest.zip
+data-sources/ml-latest.sql
+data-sources/ml-latest/
+db-data/*
